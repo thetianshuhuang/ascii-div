@@ -1,0 +1,4 @@
+[
+	{"caption": "ASCII Art: Add small divider", "command": "insertasciiart", "args": {"type": "small"}},
+	{"caption": "ASCII Art: Add large divider", "command": "insertasciiart", "args": {"type": "large"}}
+]
