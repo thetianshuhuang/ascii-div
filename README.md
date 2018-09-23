@@ -16,6 +16,24 @@ Adds easy insertion for dividers:
 
 Dividers automatically center and conform to an 79-column width. Comments are determined by language detection.
 
+
+## Install
+Copy the entire ```asci-div``` directory to Sublime's packages folder.
+
+Windows:
+```shell
+C:\Users\<your username>\AppData\Roaming\Sublime Text 3\Packages
+```
+or
+```shell
+%appdata%\Sublime Text 3\Packages
+```
+
+Linux:
+```shell
+~/.config/sublime-text-3/Packages
+```
+
 ## Commands
 
 The command can be called with
