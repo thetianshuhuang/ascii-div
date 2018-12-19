@@ -4,7 +4,8 @@
 import os
 import sublime_plugin
 
-from .ascii_defs import DIVIDERS
+from . import ascii_defs
+from functools import partial
 
 
 # -----------------------------------------------------------------------------
@@ -14,26 +15,32 @@ from .ascii_defs import DIVIDERS
 # -----------------------------------------------------------------------------
 class insertasciiartCommand(sublime_plugin.WindowCommand):
 
-    def run(self, type):
+    def run(self, divtype):
 
-        try:
-            self.func = DIVIDERS[type]
-            self.window.show_input_panel(
-                "Div Text:", "", self.on_done, None, None)
-        except KeyError:
-            raise Exception("Undefined Div Type.")
+        if divtype.startswith('figlet_'):
+            self.func = partial(ascii_defs.div_figlet, font=divtype[7:])
+        else:
+            self.func = getattr(ascii_defs, "div_" + divtype)
+
+        self.window.show_input_panel(
+            "Div Text:", "", self.on_done, None, None)
 
     def on_done(self, text):
 
         file_type = os.path.splitext(self.window.active_view().file_name())[1]
+        active = self.window.active_view()
 
-        div = self.func(text, file_type)
+        for region in active.sel():
 
-        for region in self.window.active_view().sel():
+            padding = active.rowcol(region.end())[1]
+            div = self.func(text, file_type, padding)
 
             self.window.run_command(
-                "inserttext",
-                {"text": div, "point": region.begin()})
+                "inserttext", {
+                    "text": div,
+                    "point": active.text_point(
+                        active.rowcol(region.end())[0], 0)
+                })
 
 
 # -----------------------------------------------------------------------------
