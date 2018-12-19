@@ -15,57 +15,57 @@
 		"args": {"divtype": "large"}
 	},
 	{
-		"caption": "ASCII Art: Add divider with 'slant' font",
+		"caption": "ASCII Art: Add text with 'slant' font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_slant"}
 	},
 	{
-		"caption": "ASCII Art: Add divider with 'small' font",
+		"caption": "ASCII Art: Add text with 'small' font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_small"}
 	},
 	{
-		"caption": "ASCII Art: Add divider with 'big' font",
+		"caption": "ASCII Art: Add text with 'big' font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_big"}
 	},
 	{
-		"caption": "ASCII Art: Add divider with 'smisome1' (Small Isometric) font",
+		"caption": "ASCII Art: Add text with 'smisome1' (Small Isometric) font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_smisome1"}
 	},
 	{
-		"caption": "ASCII Art: Add divider with 'smkeyboard' (Keyboard Keys) font",
+		"caption": "ASCII Art: Add text with 'smkeyboard' (Keyboard Keys) font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_smkeyboard"}
 	},
 	{
-		"caption": "ASCII Art: Add divider with 'standard' font",
+		"caption": "ASCII Art: Add text with 'standard' font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_standard"}
 	},
 	{
-		"caption": "ASCII Art: Add divider with 'rectangles' font",
+		"caption": "ASCII Art: Add text with 'rectangles' font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_rectangles"}
 	},
 	{
-		"caption": "ASCII Art: Add divider with 'isometric1' (Isometric Variant 1) font",
+		"caption": "ASCII Art: Add text with 'isometric1' (Isometric Variant 1) font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_isometric1"}
 	},
 	{
-		"caption": "ASCII Art: Add divider with 'isometric2' (Isometric Variant 2) font",
+		"caption": "ASCII Art: Add text with 'isometric2' (Isometric Variant 2) font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_isometric2"}
 	},
 	{
-		"caption": "ASCII Art: Add divider with 'isometric3' (Isometric Variant 3) font",
+		"caption": "ASCII Art: Add text with 'isometric3' (Isometric Variant 3) font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_isometric3"}
 	},
 		{
-		"caption": "ASCII Art: Add divider with 'isometric4' (Isometric Variant 4) font",
+		"caption": "ASCII Art: Add text with 'isometric4' (Isometric Variant 4) font",
 		"command": "insertasciiart",
 		"args": {"divtype": "figlet_isometric4"}
 	},

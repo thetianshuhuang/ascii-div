@@ -1,4 +1,10 @@
 
+#     ___   _____ ______________   ____  _____    __
+#    /   | / ___// ____/  _/  _/  / __ \/  _/ |  / /
+#   / /| | \__ \/ /    / / / /   / / / // / | | / /
+#  / ___ |___/ / /____/ /_/ /   / /_/ // /  | |/ /
+# /_/  |_/____/\____/___/___/  /_____/___/  |___/
+
 """ASCII Div drawing command"""
 
 import os
@@ -8,12 +14,19 @@ from . import ascii_defs
 from functools import partial
 
 
-# -----------------------------------------------------------------------------
-#
-#                               Insert ASCII Art
-#
-# -----------------------------------------------------------------------------
 class insertasciiartCommand(sublime_plugin.WindowCommand):
+    """ASCII art handler command
+
+    Examples
+    --------
+    In Default.sublime-command:
+    {
+        "caption": "ASCII Art: Add small divider",
+        "command": "insertasciiart",
+        "args": {"divtype": <divider type>}
+    },
+    The divider type can be 'small', 'medium', 'large', or 'figlet_<font>'.
+    """
 
     def run(self, divtype):
 
@@ -26,6 +39,13 @@ class insertasciiartCommand(sublime_plugin.WindowCommand):
             "Div Text:", "", self.on_done, None, None)
 
     def on_done(self, text):
+        """Command to run after dialog box completed
+
+        Parameters
+        ----------
+        text : str
+            String passed by self.window.show_input_panel
+        """
 
         file_type = os.path.splitext(self.window.active_view().file_name())[1]
         active = self.window.active_view()
@@ -43,12 +63,20 @@ class insertasciiartCommand(sublime_plugin.WindowCommand):
                 })
 
 
-# -----------------------------------------------------------------------------
-#
-#                          Insert Text Helper Command
-#
-# -----------------------------------------------------------------------------
 class inserttextCommand(sublime_plugin.TextCommand):
+    """Base insert text command
+
+    Since sublime 'edit' objects can only be created by TextCommands, any
+    view edits must pass through an external command.
+
+    Usage
+    -----
+    self.window.run_command(
+        "inserttext", {
+            "text": text_to_insert,
+            "point": sublime_text_point
+        })
+    """
 
     def run(self, edit, text, point):
 
